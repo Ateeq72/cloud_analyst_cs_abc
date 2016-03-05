@@ -53,13 +53,15 @@ public class calulatePenalty {
         } else if (BSP.equals(Constants.BROKER_POLICY_PROXIMITY)) {
             cost = (TimeTaken - TimeGiven + 0.07) / 100;
         }
+        else if (BSP.equals(Constants.BROKER_POLICY_PROXIMITY)) {
+            cost = (TimeTaken - TimeGiven + 0.07) / 100;
+            //Added
+        }
+
+
 
         perucp.add( cost);
-
-
         System.out.println("Penalty Cost for CU" + j + ":  " + cost);
-
-
         return cost;
     }
 
