@@ -1,6 +1,7 @@
 package cloudsim.ext;
 
 import cloudsim.ext.servicebroker.*;
+import cloudsim.ext.servicebroker.AlgoDep.OptimizationProblem;
 import eduni.simjava.Sim_stat;
 import eduni.simjava.Sim_system;
 import gridsim.GridSim;
@@ -220,32 +221,30 @@ public class Simulation extends BaseCloudSimObservable implements Constants {
 		CloudAppServiceBroker serviceBroker;
 		if (serviceBrokerPolicy.equals(Constants.BROKER_POLICY_PROXIMITY)){
 			serviceBroker = new ServiceProximityServiceBroker();
-                        BSP = Constants.BROKER_POLICY_PROXIMITY;
+			BSP = Constants.BROKER_POLICY_PROXIMITY;
 		} else if (serviceBrokerPolicy.equals(Constants.BROKER_POLICY_DYNAMIC)){
 			serviceBroker = new DynamicServiceBroker(dcbs);
-                        BSP = Constants.BROKER_POLICY_DYNAMIC;
-		} 
-		else if (serviceBrokerPolicy.equals(Constants.BROKER_POLICY_ACO))
-                {
-                    serviceBroker = new AntColonyOptimization();
-                    BSP = Constants.BROKER_POLICY_ACO;
-                }
+			BSP = Constants.BROKER_POLICY_DYNAMIC;
+		}
 		else if (serviceBrokerPolicy.equals(Constants.BROKER_POLICY_ACO))
 		{
 			serviceBroker = new AntColonyOptimization();
-                        BSP = Constants.BROKER_POLICY_OPTIMAL_RESPONSE;
+			BSP = Constants.BROKER_POLICY_ACO;
 		}
 		else if (serviceBrokerPolicy.equals(Constants.BROKER_POLICY_CS))
 		{
-			serviceBroker = new  DynamicServiceBroker(dcbs);
-			          BSP = Constants.BROKER_POLICY_CS;
+			serviceBroker = new CuckooOptimizationIn();
+			BSP = Constants.BROKER_POLICY_CS;
 		}
-		else
+		else if (serviceBrokerPolicy.equals(Constants.BROKER_POLICY_HYBRID))
 		{
 			serviceBroker = new AntColonyOptimization();
 			BSP = Constants.BROKER_POLICY_HYBRID;
 		}
-
+		else {
+			serviceBroker = new BestResponseTimeServiceBroker();
+			BSP = Constants.BROKER_POLICY_OPTIMAL_RESPONSE;
+		}
 		internet.addServiceBroker(DEFAULT_APP_ID, serviceBroker); 				
 		
 		//Set the simulation duration

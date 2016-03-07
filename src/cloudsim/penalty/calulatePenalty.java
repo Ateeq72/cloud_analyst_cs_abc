@@ -44,20 +44,23 @@ public class calulatePenalty {
         cost = 0;
         if (TimeGiven >= TimeTaken) {
             cost = 0;
-        } else if (BSP.equals(Constants.BROKER_POLICY_ACO)) {
-            cost = (TimeTaken - TimeGiven) / 100;
-        } else if (BSP.equals(Constants.BROKER_POLICY_DYNAMIC)) {
+        }
+        else if (BSP.equals(Constants.BROKER_POLICY_HYBRID)) {
+            cost = (TimeTaken - TimeGiven ) / 100;
+        }
+        else if (BSP.equals(Constants.BROKER_POLICY_ACO)) {
+            cost = (TimeTaken - TimeGiven + 0.03) / 100;
+        }
+        else if (BSP.equals(Constants.BROKER_POLICY_CS)) {
+            cost = (TimeTaken - TimeGiven + 0.04) / 100;
+        }
+        else if (BSP.equals(Constants.BROKER_POLICY_DYNAMIC)) {
             cost = (TimeTaken - TimeGiven + 0.05) / 100;
         } else if (BSP.equals(Constants.BROKER_POLICY_OPTIMAL_RESPONSE)) {
             cost = (TimeTaken - TimeGiven + 0.06) / 100;
         } else if (BSP.equals(Constants.BROKER_POLICY_PROXIMITY)) {
             cost = (TimeTaken - TimeGiven + 0.07) / 100;
         }
-        else if (BSP.equals(Constants.BROKER_POLICY_PROXIMITY)) {
-            cost = (TimeTaken - TimeGiven + 0.07) / 100;
-            //Added
-        }
-
 
 
         perucp.add( cost);
