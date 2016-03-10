@@ -7,8 +7,8 @@
 Version: SimJava 2.0
 
 Simulation date:         7 March, 2016
-Simulation start time:   11:42:13 AM IST
-Simulation end time:     11:42:14 AM IST
+Simulation start time:   11:46:14 AM IST
+Simulation end time:     11:46:14 AM IST
 
 ############################################################
 #            Overall simulation run information            #
@@ -29,19 +29,19 @@ Output analysis method:  None
 
 - Service time
 
-Sample mean:          0.3420589899407657
-Sample variance:      0.06250163650345855
-Sample std deviation: 0.25000327298549224
-Maximum:              0.6123853807221167
-Minimum:              0.01926164492033422
+Sample mean:          0.3340968056686611
+Sample variance:      0.06228116107496714
+Sample std deviation: 0.24956193835392274
+Maximum:              0.6110892363358289
+Minimum:              0.02094558021053672
 
 - Overloading status : CSP1-Broker-0
 
-Sample mean:          0.3420589899407657
-Sample variance:      0.06250163650345855
-Sample std deviation: 0.25000327298549224
-Maximum:              0.6123853807221167
-Minimum:              0.01926164492033422
+Sample mean:          0.3340968056686611
+Sample variance:      0.06228116107496714
+Sample std deviation: 0.24956193835392274
+Maximum:              0.6110892363358289
+Minimum:              0.02094558021053672
 
 - Overloading status : CSP1-Broker-1
 
@@ -231,19 +231,19 @@ Minimum:              0.0
 
 - UB Response time
 
-Sample mean:          300.05616085170834
-Sample variance:      434.029270390977
-Sample std deviation: 20.833369156019316
-Maximum:              369.11519830842735
-Minimum:              237.0591758233495
+Sample mean:          300.462621467568
+Sample variance:      451.43989574806324
+Sample std deviation: 21.247114998231247
+Maximum:              370.6117072161287
+Minimum:              229.61222574691055
 
 - Hourly Response Time-0
 
-Sample mean:          300.05616085170834
-Sample variance:      434.029270390977
-Sample std deviation: 20.833369156019316
-Maximum:              369.11519830842735
-Minimum:              237.0591758233495
+Sample mean:          300.462621467568
+Sample variance:      451.43989574806324
+Sample std deviation: 21.247114998231247
+Maximum:              370.6117072161287
+Minimum:              229.61222574691055
 
 - Hourly Response Time-1
 
